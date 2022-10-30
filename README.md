@@ -2,7 +2,7 @@
 
 It's a subjet to practice algorithm, the better way you code you can do less structe to reach the goal
 
-
+/text
 The subject rules
 • You have 2 stacks named a and b.
 • At the beginning:

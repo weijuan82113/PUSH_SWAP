@@ -29,3 +29,11 @@ rrr : rra and rrb at the same time.
 
 #method that I want to do
 
+1.use merge_sort to sort the list
+#about merge_sort I practice the code in https://github.com/weijuan82113/Practice.git
+
+2.transfer the list to binary
+#finishied part
+2022.10.31
+
+3.use Bitwise Operators and radix sort to complete for the O(n) time complexity

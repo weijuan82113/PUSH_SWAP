@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:38:40 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/31 02:20:00 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/03 20:11:07 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 # include "libft.h"
 # include "stdio.h"
 
-static void	print_array(int *arr, int size)
-{
-	size_t	i;
+// static void	print_array(int *arr, int size)
+// {
+// 	size_t	i;
 
-	i = 0;
-	if(arr)
-	{
-		while (i < (size_t)(size - 1))
-			printf("%d, ", arr[i++]);
-		printf("%d \n", arr[i]);
-	}
-}
+// 	i = 0;
+// 	if(arr)
+// 	{
+// 		while (i < (size_t)(size - 1))
+// 			printf("%d, ", arr[i++]);
+// 		printf("%d \n", arr[i]);
+// 	}
+// }
 
 int *covert_to_bit_arr(int argc, char const** argv, int *int_arr)
 {
@@ -60,7 +60,7 @@ t_node *lst_init(int argc, char const **argv, int *int_arr)
 
 	node_contents = covert_to_bit_arr(argc, argv, int_arr);
 	free (int_arr);
-	print_array(node_contents, argc - 1);
+	//print_array(node_contents, argc - 1);
 	head = ft_lstnew(&node_contents[0]);
 	var.i = 1;
 	while (var.i < argc -1)

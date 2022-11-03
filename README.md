@@ -39,3 +39,4 @@ rrr : rra and rrb at the same time.
 2022.10.31
 1.(finished)
 2.(finished)
+3.2022.11.3 finished but can do better

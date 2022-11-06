@@ -6,12 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:19:33 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/30 13:53:47 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:14:15 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
-#include	"libft.h"
 
 void	ft_put_unnbr_fd(unsigned int n, int fd)
 {

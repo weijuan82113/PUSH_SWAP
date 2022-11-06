@@ -6,12 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:38:46 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/31 01:37:48 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:30:29 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	free_lr(int *l, int *r)
 {

@@ -6,13 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:38:40 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/03 20:11:07 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:58:44 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-# include "libft.h"
-# include "stdio.h"
 
 // static void	print_array(int *arr, int size)
 // {
@@ -39,7 +37,7 @@ int *covert_to_bit_arr(int argc, char const** argv, int *int_arr)
 		err_exit();
 	while (var.i < argc - 1)
 	{
-		node_contents[var.i] = ft_atoi(argv[var.i + 1]);
+		node_contents[var.i] = ft_atoi_exit(argv[var.i + 1]);
 		var.j = 0;
 		while (var.j < argc - 1)
 		{

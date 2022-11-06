@@ -36,7 +36,11 @@ rrr : rra and rrb at the same time.
 
 3.use Bitwise Operators and radix sort to complete for the O(n) time complexity
 
-2022.10.31
+4.optimize
+
 1.(finished)
 2.(finished)
-3.2022.11.3 finished but can do better
+3.(finidhed) #2022.10.31
+4.(doing) #2022.11.6
+
+

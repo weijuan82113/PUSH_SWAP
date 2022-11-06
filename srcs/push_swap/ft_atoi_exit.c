@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include	"push_swap.h"
 
 static long long	overflow(int minus_number)
 {
+	err_exit();
 	if (minus_number == 1)
 		return (LONG_MIN);
 	else
@@ -22,12 +23,12 @@ static long long	overflow(int minus_number)
 
 static long long	chrtoi(long long num, int minus_number, const char *str)
 {
-	if (num > LONG_MAX / 10 || num < LONG_MIN / 10)
-		return (overflow(minus_number));
-	if (num == LONG_MAX / 10 && (*str - '0') > LONG_MAX % 10)
-		return (overflow(minus_number));
-	if (num == LONG_MIN / 10 && (*str - '0') > LONG_MIN % 10 * (-1))
-		return (overflow(minus_number));
+	if (num > INT_MAX / 10 || num < INT_MIN / 10)
+		overflow(minus_number);
+	if (num == INT_MAX / 10 && (*str - '0') > INT_MAX % 10)
+		overflow(minus_number);
+	if (num == INT_MIN / 10 && (*str - '0') > INT_MIN % 10 * (-1))
+		overflow(minus_number);
 	if (minus_number == 1)
 		num = num * 10 - (*str - '0');
 	else
@@ -35,7 +36,7 @@ static long long	chrtoi(long long num, int minus_number, const char *str)
 	return (num);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi_exit(const char *str)
 {
 	int			operator_number;
 	int			minus_number;
@@ -64,12 +65,11 @@ int	ft_atoi(const char *str)
 }
 // #include <stdlib.h>
 // #include <stdio.h>
-// #include <stdio.h>
 // int main(void)
 // {
 // 	//   \f\r\n\r\t2147483647
 // 	//char str[] = "\f\r\n\r\t-2147483649";
-// 	char str[] = "9223372036854775806";
+// 	char str[] = "asd";
 // 	printf("atoi is %d\n", atoi (str));
 // 	printf("ft_atoi is %d\n", ft_atoi (str));
 // 	return (0);

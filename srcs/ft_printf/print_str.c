@@ -6,12 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:39:26 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/30 14:23:11 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:14:13 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
-#include	"libft.h"
 
 int	print_str(char *str)
 {

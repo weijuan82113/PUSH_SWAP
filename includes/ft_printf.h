@@ -6,16 +6,15 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:42:51 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/30 12:53:10 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:15:10 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
 

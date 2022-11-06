@@ -6,11 +6,10 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:53:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/25 23:52:25 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 16:19:24 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 int	print_format(char format, va_list *args)

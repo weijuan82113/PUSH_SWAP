@@ -6,11 +6,10 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 00:09:11 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/30 13:53:13 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 16:19:43 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 void	ft_putbx_fd(unsigned int un_int, int fd)

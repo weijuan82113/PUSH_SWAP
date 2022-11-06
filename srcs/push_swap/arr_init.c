@@ -6,14 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 14:35:02 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/31 02:11:54 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:29:47 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-# include "ft_printf.h"
 # include "push_swap.h"
-# include <stdio.h>
 
 bool is_int(char const *num_str)
 {
@@ -55,7 +52,7 @@ int *is_sorted(int size, char const **argv)
 		err_exit();
 	i = 0;
 	while (i++ < size)
-		int_arr[i - 1] = ft_atoi(argv[i]);
+		int_arr[i - 1] = ft_atoi_exit(argv[i]);
 	i = 0;
 	while (i < (size - 1))
 	{

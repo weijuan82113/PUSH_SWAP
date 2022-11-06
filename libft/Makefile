@@ -6,7 +6,7 @@
 #    By: wchen <wchen@42studen>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2022/10/11 23:13:49 by wchen            ###   ########.fr        #
+#    Updated: 2022/11/06 17:13:06 by wchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ SRCS			=ft_lstmap.c					\
 				ft_strlen.c      				\
 
 #	Objects
-OBJS		= $(SRCS:.c=.o)
+OBJS		= $(SRCS:%.c=%.o)
 
 NAME		= libft.a
 

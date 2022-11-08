@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 00:57:44 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/06 20:31:24 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/08 23:26:25 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct s_var
 {
-	int		i,j,k;
+	int		i,j,k,l;
 	int 	n1;
 	int 	n2;
 	int		*l_arr;
@@ -33,5 +33,9 @@ int 	*arr_init(int argc,char const **argv);
 t_node	*lst_init(int argc, char const **argv, int *int_arr);
 void	push_swap(t_node **head_a, int argc);
 int		ft_atoi_exit(const char *str);
+void	rotate(t_node **head, char *state);
+void	push(t_node **head_add, t_node **head_del, char *state);
+void	swap(t_node **head, char *state);
+void	r_rotate(t_node **head, char *state);
 
 #endif

@@ -6,54 +6,21 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:00:25 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/06 23:50:40 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/09 02:12:06 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-void	ra(t_node **head_a)
-{
-	t_node *tail_a;
-	t_node *temp_node;
-
-	temp_node = (*head_a) -> next;
-	tail_a = ft_lstlast(*head_a);
-	tail_a -> next = *head_a;
-	(*head_a) -> next = NULL;
-	*head_a = temp_node;
-	ft_printf("ra\n");
-}
-
-void	pa(t_node **head_add, t_node **head_del)
-{
-	t_node *temp_node;
-	if (!(*head_del) -> next)
-		temp_node = NULL;
-	else
-		temp_node = (*head_del) -> next;
-	if(*head_add)
-		ft_lstadd_front(head_add , *head_del);
-	else
-		*head_add = ft_lstnew((*head_del) -> content);
-	*head_del =  temp_node;
-	ft_printf("pa\n");
-}
-
-void	pb(t_node **head_add, t_node **head_del)
-{
-	t_node *temp_node;
-	if (!(*head_del) -> next)
-		temp_node = NULL;
-	else
-		temp_node = (*head_del) -> next;
-	if(*head_add)
-		ft_lstadd_front(head_add , *head_del);
-	else
-		*head_add = ft_lstnew((*head_del) -> content);
-	*head_del =  temp_node;
-	ft_printf("pb\n");
-}
+// static void print_list(t_node *lst)
+// {
+// 	while (lst)
+// 	{
+// 		printf("%d-->", *(int*)lst->content);
+// 		lst = lst->next;
+// 	}
+// 	printf("NULL\n");
+// }
 
 bool	is_sorted_lst(t_node *head)
 {
@@ -71,38 +38,94 @@ bool	is_sorted_lst(t_node *head)
 	return (true);
 }
 
-// static void print_list(t_node *lst)
-// {
-// 	while (lst)
-// 	{
-// 		printf("%d-->", *(int*)lst->content);
-// 		lst = lst->next;
-// 	}
-// 	printf("NULL\n");
-// }
+# include <stdio.h>
+
+void	push_min(t_node **head_a, t_node **head_b, int i)
+{
+	t_var	var;
+
+	var.i = 0;
+	while (var.i < i)
+	{
+		while (*(int *)((*head_a) -> content) != var.i && (*head_a) -> next != NULL)
+			rotate(head_a, "ra");
+		push(head_b, head_a, "pb");
+		var.i ++;
+	}
+}
+
+void	three_nums_sort(t_node **head_a)
+{
+	t_var	var;
+
+	var.i = *(int *)((*head_a) -> content);
+	var.j = *(int *)((*head_a) -> next -> content);
+	var.k = *(int *)((*head_a) -> next -> next-> content);
+	if(var.i > var.j && var.j > var.k)
+	{
+		rotate(head_a, "ra");
+		swap(head_a, "sa");
+	}
+	else if(var.i > var.k && var.k > var.j)
+		rotate(head_a, "ra");
+	else if((var.j < var.i && var.i < var.k) || (var.k < var.i && var.i < var.j))
+	{
+		if(var.j < var.k)
+			swap(head_a, "sa");
+		else
+			r_rotate(head_a,"rra");
+	}
+	else
+	{
+		r_rotate(head_a,"rra");
+		swap(head_a, "sa");
+	}
+}
+
+void	push_swap_small(t_node **head_a,t_node **head_b, int argc)
+{
+	t_var var;
+
+	if(argc - 1 == 2)
+		swap(head_a, "sa");
+	else
+	{
+		var.i = 0;
+		while(argc - 1 - var.i > 3)
+			var.i ++;
+		push_min(head_a, head_b, var.i);
+		three_nums_sort(head_a);
+		while(*head_b != NULL)
+		push(head_a, head_b, "pa");
+		// print_list(*head_a);
+	}
+}
 
 void	push_swap(t_node **head_a, int argc)
 {
 	t_node	*head_b;
 	t_var	var;
 
-	var.i = 0;
 	head_b = NULL;
-	while((argc-2) >> var.i != 0)
+	var.i = 0;
+	if (argc - 1 <= 5)
+		push_swap_small(head_a, &head_b, argc);
+	else
 	{
-		var.j = 0;
-		while(!is_sorted_lst(*head_a) && var.j < argc -1)
+		while((argc-2) >> var.i != 0)
 		{
-			if ((*(int *)((*head_a) -> content) >> var.i & 1) == 0)
-				pb(&head_b, head_a);
-			else
-				ra(head_a);
-			// print_list(*head_a);
-			// print_list(head_b);
-			var.j ++;
+			var.j = 0;
+			while(!is_sorted_lst(*head_a) && var.j < argc -1)
+			{
+				if ((*(int *)((*head_a) -> content) >> var.i & 1) == 0)
+					push(&head_b, head_a, "pb");
+				else
+					rotate(head_a,"ra");
+				var.j ++;
+			}
+			while(head_b != NULL)
+				push(head_a, &head_b, "pa");
+			var.i ++;
 		}
-		while(head_b != NULL)
-			pa(head_a, &head_b);
-		var.i ++;
 	}
 }

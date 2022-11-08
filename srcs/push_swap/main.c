@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:57:00 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/06 23:55:19 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/09 02:02:04 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc,char const **argv)
 	push_swap(&head, argc);
 	// printf("----after----\n");
 	// print_list(head);
-	free(temp -> content);
+	//free(temp -> content);
 	ft_lstclear(&temp, free);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: wchen <wchen@42studen>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 10:56:47 by wchen             #+#    #+#              #
-#    Updated: 2022/11/06 23:17:13 by wchen            ###   ########.fr        #
+#    Updated: 2022/11/07 21:58:32 by wchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SW_SRCS			=	$(addprefix $(SW_DIR),/arr_init.c		\
 										/lst_init.c			\
 										/merge_sort_arr.c	\
 										/push_swap.c		\
+										/push_swap_method.c	\
 										)
 SW_OBJS	=	$(SW_SRCS:.c=.o)
 

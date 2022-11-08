@@ -40,7 +40,7 @@ rrr : rra and rrb at the same time.
 
 1.(finished)
 2.(finished)
-3.(finidhed) #2022.10.31
-4.(doing) #2022.11.6
+3.(finished) #2022.10.31
+4.(finished) #2022.11.9
 
 

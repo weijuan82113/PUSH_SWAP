@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 23:50:06 by wchen             #+#    #+#             */
-/*   Updated: 2022/07/30 23:50:06 by wchen            ###   ########.fr       */
+/*   Created: 2022/11/09 19:11:18 by wchen             #+#    #+#             */
+/*   Updated: 2022/11/09 19:11:18 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 static long long	overflow(int minus_number)
 {
@@ -43,23 +43,23 @@ int	ft_atoi_exit(const char *str)
 	long long	num;
 
 	while ((9 <= *str && *str <= 13) || *str == 32)
-		str ++;
+		str++;
 	operator_number = 0;
 	minus_number = 0;
 	while (*str == '-' || *str == '+')
 	{
-		operator_number ++;
+		operator_number++;
 		if (operator_number > 1)
 			return (0);
 		if (*str == '-')
-			minus_number ++;
-		str ++;
+			minus_number++;
+		str++;
 	}
 	num = 0;
 	while ('0' <= *str && *str <= '9')
 	{
 		num = chrtoi(num, minus_number, str);
-		str ++;
+		str++;
 	}
 	return ((int)num);
 }

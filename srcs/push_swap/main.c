@@ -6,11 +6,11 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:57:00 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/09 02:02:04 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/09 19:17:57 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 // __attribute__((destructor))
 // static void destructor() {
@@ -50,7 +50,7 @@
 // 	printf("NULL\n");
 // }
 
-int	main(int argc,char const **argv)
+int	main(int argc, char const **argv)
 {
 	int		*int_arr;
 	t_node	*head;
@@ -59,15 +59,9 @@ int	main(int argc,char const **argv)
 	int_arr = arr_init(argc, argv);
 	if (!int_arr)
 		return (0);
-	//print_array(int_arr, argc - 1);
 	head = lst_init(argc, argv, int_arr);
 	temp = head;
-	// printf("----before----\n");
-	// print_list(head);
 	push_swap(&head, argc);
-	// printf("----after----\n");
-	// print_list(head);
-	//free(temp -> content);
 	ft_lstclear(&temp, free);
 	return (0);
 }

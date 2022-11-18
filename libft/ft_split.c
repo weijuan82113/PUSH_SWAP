@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:11:43 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/20 00:50:40 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/17 22:40:57 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	**ft_split(char const *s, char c)
 	if (!judge_char)
 		return (NULL);
 	count = count_split_area(s, c, judge_char);
-	ret_char = (char **)malloc(sizeof(char *) * count + 1);
+	ret_char = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!ret_char)
 	{
 		free (judge_char);
@@ -113,12 +113,12 @@ char	**ft_split(char const *s, char c)
 	free (judge_char);
 	return (ret_char);
 }
-//#include <stdio.h>
+// #include <stdio.h>
 // int main (void)
 // {
 // 	//char *ch = NULL;
-// 	char ch[] = "hello,world,42,tokyo";
-// 	char c = ',';
+// 	char ch[] = "1 2 3";
+// 	char c = ' ';
 // 	char **ans;
 // 	size_t i;
 

@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 00:57:44 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/09 19:21:28 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/18 20:35:50 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ typedef struct s_var
 }		t_var;
 
 void	err_exit(void);
-void	merge_sort(int *int_array, int left, int right);
-int		*arr_init(int argc, char const **argv);
-t_node	*lst_init(int argc, char const **argv, int *int_arr);
-void	push_swap(t_node **head_a, int argc);
+t_node	*list_init(int argc, char const **argv);
+void	merge_sort(t_node **headRef);
+void	convert_binary(t_node **input_head, t_node *sorted_head);
+void	push_swap(t_node **head_a, int size);
 int		ft_atoi_exit(const char *str);
 void	rotate(t_node **head, char *state);
 void	push(t_node **head_add, t_node **head_del, char *state);
 void	swap(t_node **head, char *state);
 void	r_rotate(t_node **head, char *state);
+void	*free_all(char **chr);
 
 #endif

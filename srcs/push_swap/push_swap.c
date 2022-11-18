@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:00:25 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/09 19:16:54 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/18 20:35:33 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,16 @@ void	three_nums_sort(t_node **head_a)
 	}
 }
 
-void	push_swap_small(t_node **head_a, t_node **head_b, int argc)
+void	push_swap_small(t_node **head_a, t_node **head_b, int size)
 {
 	t_var	var;
 
-	if (argc - 1 == 2)
+	if (size == 2)
 		swap(head_a, "sa");
 	else
 	{
 		var.i = 0;
-		while (argc - 1 - var.i > 3)
+		while (size - var.i > 3)
 			var.i++;
 		push_min(head_a, head_b, var.i);
 		three_nums_sort(head_a);
@@ -99,21 +99,21 @@ void	push_swap_small(t_node **head_a, t_node **head_b, int argc)
 	}
 }
 
-void	push_swap(t_node **head_a, int argc)
+void	push_swap(t_node **head_a, int size)
 {
 	t_node	*head_b;
 	t_var	var;
 
 	head_b = NULL;
 	var.i = 0;
-	if (argc - 1 <= 5)
-		push_swap_small(head_a, &head_b, argc);
+	if (size <= 5)
+		push_swap_small(head_a, &head_b, size);
 	else
 	{
-		while ((argc - 2) >> var.i != 0)
+		while ((size - 1) >> var.i != 0)
 		{
 			var.j = 0;
-			while (!is_sorted_lst(*head_a) && var.j < argc - 1)
+			while (!is_sorted_lst(*head_a) && var.j < size)
 			{
 				if ((*(int *)((*head_a)->content) >> var.i & 1) == 0)
 					push(&head_b, head_a, "pb");

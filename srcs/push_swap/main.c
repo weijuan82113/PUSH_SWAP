@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:57:00 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/09 19:17:57 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/18 23:24:03 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,51 +17,43 @@
 //     system("leaks -q push_swap");
 // }
 
-// void print_node(t_node *lst)
-// {
-// 	while (lst)
-// 	{
-// 		printf("%d-->", lst->content);
-// 		lst = lst->next;
-// 	}
-// 	printf("NULL\n");
-// }
-
-// static void	print_array(int *arr, int size)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	if(arr)
-// 	{
-// 		while (i < (size_t)(size - 1))
-// 			printf("%d, ", arr[i++]);
-// 		printf("%d \n", arr[i]);
-// 	}
-// }
-
 // static void print_list(t_node *lst)
 // {
 // 	while (lst)
 // 	{
-// 		printf("%d-->", *(int *)lst->content);
+// 		printf("%d-->", *((int *)lst->content));
 // 		lst = lst->next;
 // 	}
 // 	printf("NULL\n");
 // }
 
+static bool	is_duplication(t_node *head)
+{
+	while (head -> next)
+	{
+		if (*(int *)(head -> content) == *(int *)(head -> next -> content))
+			return (true);
+		head = head -> next;
+	}
+	return (false);
+}
+
 int	main(int argc, char const **argv)
 {
-	int		*int_arr;
-	t_node	*head;
-	t_node	*temp;
+	t_node	*input_head;
+	t_node	*sorted_head;
 
-	int_arr = arr_init(argc, argv);
-	if (!int_arr)
+	if (argc == 1)
 		return (0);
-	head = lst_init(argc, argv, int_arr);
-	temp = head;
-	push_swap(&head, argc);
-	ft_lstclear(&temp, free);
+	input_head = list_init(argc, argv);
+	if (!input_head)
+		return (0);
+	sorted_head = list_init(argc, argv);
+	merge_sort(&sorted_head);
+	if (is_duplication(sorted_head))
+		err_exit();
+	convert_binary(&input_head, sorted_head);
+	push_swap(&input_head, ft_lstsize(input_head));
+	ft_lstclear(&input_head, free);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 00:57:44 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/18 20:35:50 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/21 20:00:01 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "../libft/libft.h"
 # include "ft_printf.h"
 # include <stdbool.h>
-# include <stdio.h>
 
 typedef struct s_var
 {

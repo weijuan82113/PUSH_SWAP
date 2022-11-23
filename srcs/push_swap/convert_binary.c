@@ -6,13 +6,13 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:38:40 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/18 22:36:59 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 10:06:46 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	convert(t_node **input_head, t_node *sorted_head, int *int_ptr)
+static void	convert(t_node **input_head, t_node *sorted_head, int *int_ptr)
 {
 	while (sorted_head)
 	{

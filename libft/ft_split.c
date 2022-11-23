@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:11:43 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/17 22:40:57 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 09:41:45 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ char	**ft_split(char const *s, char c)
 // int main (void)
 // {
 // 	//char *ch = NULL;
-// 	char ch[] = "1 2 3";
+// 	char ch[] = "-2147483649";
 // 	char c = ' ';
 // 	char **ans;
 // 	size_t i;

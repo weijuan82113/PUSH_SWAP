@@ -6,13 +6,13 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:56:13 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/09 19:13:14 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 10:07:38 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_lstlast_pre(t_node *lst)
+static t_node	*ft_lstlast_pre(t_node *lst)
 {
 	if (!lst)
 		return (NULL);

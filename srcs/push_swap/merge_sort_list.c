@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:38:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/18 22:40:16 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 10:07:14 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	f_b_spt(t_node *source, t_node **f, t_node **b)
 	slow->next = NULL;
 }
 
-t_node	*sorted_merge(t_node *a, t_node *b)
+static t_node	*sorted_merge(t_node *a, t_node *b)
 {
 	t_node	*result;
 

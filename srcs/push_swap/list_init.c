@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 14:35:02 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/18 23:23:21 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 10:05:27 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ static bool	is_int(char const *num_str)
 	while (num_str[i])
 	{
 		if (num_str[i] == '-' || num_str[i] == '+')
+		{
 			ope++;
+			i++;
+		}
 		if ((!ft_isdigit(num_str[i]) && num_str[i] != ' ') || ope > 1)
 			return (false);
-		while (num_str[i] == ' ')
-		{
-			i++;
+		if (num_str[i] == ' ')
 			ope = 0;
-		}
-		i++;
+		i ++;
 	}
 	return (true);
 }
 
-void	init_int_lst(char *str, t_node **int_lst_head)
+static void	init_int_lst(char *str, t_node **int_lst_head)
 {
 	int	*int_ptr;
 
@@ -51,7 +51,7 @@ void	init_int_lst(char *str, t_node **int_lst_head)
 		ft_lstadd_back(int_lst_head, ft_lstnew(int_ptr));
 }
 
-t_node	*is_ints(int argc, char const **argv)
+static t_node	*is_ints(int argc, char const **argv)
 {
 	int		i;
 	int		j;

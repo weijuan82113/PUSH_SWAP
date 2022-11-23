@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:00:25 by wchen             #+#    #+#             */
-/*   Updated: 2022/11/18 20:35:33 by wchen            ###   ########.fr       */
+/*   Updated: 2022/11/23 10:08:12 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // 	printf("NULL\n");
 // }
 
-bool	is_sorted_lst(t_node *head)
+static bool	is_sorted_lst(t_node *head)
 {
 	int	pre_node;
 	int	next_node;
@@ -38,7 +38,7 @@ bool	is_sorted_lst(t_node *head)
 	return (true);
 }
 
-void	push_min(t_node **head_a, t_node **head_b, int i)
+static void	push_min(t_node **head_a, t_node **head_b, int i)
 {
 	t_var	var;
 
@@ -52,7 +52,7 @@ void	push_min(t_node **head_a, t_node **head_b, int i)
 	}
 }
 
-void	three_nums_sort(t_node **head_a)
+static void	three_nums_sort(t_node **head_a)
 {
 	t_var	var;
 
@@ -81,7 +81,7 @@ void	three_nums_sort(t_node **head_a)
 	}
 }
 
-void	push_swap_small(t_node **head_a, t_node **head_b, int size)
+static void	push_swap_small(t_node **head_a, t_node **head_b, int size)
 {
 	t_var	var;
 
